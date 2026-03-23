@@ -1,0 +1,13 @@
+Bash Notes
+
+** Area 1 **
+grep obviously super helpful
+	-B1 C1 A1 etc gives the lines before/both/after the grepped line
+	-i is case insensitive
+	-o is only matching parts of the lines
+	 * is wildcard operator
+example: cat file.txt | grep -i samuel | grep pap
+- this above searches file.txt for case insensitive occurrences of samuel and then pieps those into grep pap which looks for occurrences of 'pap' in those results
+
+pipe | takes output from the right and inputs it on the same command line
+`
