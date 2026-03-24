@@ -10,4 +10,10 @@ compgen gives all bash builtin commands
 Programs and Commands
 file caommand will tell you which type of file it is
 tr is the translate command
+variable=vaue
+$VARIABLE
+that is how you use variables
+unset is a way of unsetting variables (null?)
+
+VIM
 
