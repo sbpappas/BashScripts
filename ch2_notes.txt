@@ -1,3 +1,13 @@
 Chapter 2
 man pages are super helpful, obviously
+ - learn the sections of the man: man 3 print3
+help is the 'man' equivalent of bash (built in)
+type command
+'type history'
+the type of a command can be both built in and external program
+compgen gives all bash builtin commands
+
+Programs and Commands
+file caommand will tell you which type of file it is
+tr is the translate command
 
