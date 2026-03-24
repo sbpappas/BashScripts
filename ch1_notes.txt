@@ -10,4 +10,8 @@ example: cat file.txt | grep -i samuel | grep pap
 - this above searches file.txt for case insensitive occurrences of samuel and then pieps those into grep pap which looks for occurrences of 'pap' in those results
 
 pipe | takes output from the right and inputs it on the same command line
-`
+pagers
+less command is like cat but it paginates
+	- the slash command can search through less results
+
+
