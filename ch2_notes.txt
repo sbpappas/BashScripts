@@ -16,4 +16,4 @@ that is how you use variables
 unset is a way of unsetting variables (null?)
 
 VIM
-
+dd, yy, p for paste, o for new line, 
