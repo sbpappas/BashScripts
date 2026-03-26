@@ -17,3 +17,10 @@ unset is a way of unsetting variables (null?)
 
 VIM
 dd, yy, p for paste, o for new line, 
+
+File permissions
+chmod +x filename 
+ -this gives execute function to everyone
+
+
+
