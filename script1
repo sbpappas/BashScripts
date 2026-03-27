@@ -6,5 +6,4 @@ system=$(uname)
 
 echo "hello $name your number is $number"
 echo "youre on a $system system"
-
-
+echo "$PATH" | tr : '\n'
