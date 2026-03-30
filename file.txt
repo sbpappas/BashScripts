@@ -1,9 +1,0 @@
-hello
-hello
-b
-
-vim practice
-jk is up down
-dd - delete
-d34d - delete 34 lines
-yy - yank
