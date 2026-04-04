@@ -14,3 +14,14 @@ d=3
 if [[ $c != $d ]]; then 
 	echo "c and d are not the same"
 fi
+
+if [[ -f file.txt ]]; then 
+	echo 'file.txt exists and is a file'
+fi
+
+while [[ -f file.txt ]]; do
+	echo 'file.txt exists and is a file'
+	sleep 1
+done
+
+echo 'file is gone'
