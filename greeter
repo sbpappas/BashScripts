@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+greet() {
+	local name=$1 # must be local or else it will be global
+	echo "hello $name"
+	return 0
+}
+
+for name in "$@"; do
+	greet "$name" >> file.txt
+done
+
+var=$(greet samuel)
+echo "var is $var"
+
+greet samuel
+echo $?
+
+
