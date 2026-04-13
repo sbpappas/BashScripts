@@ -15,6 +15,8 @@ if (($# == 0)); then
 	exit 1
 fi
 
+
+# d* is a wildcard operator, checks if name starts with d
 for name in "$@"; do
 	if [[ $name == d* ]]; then
 		hello "$name"
