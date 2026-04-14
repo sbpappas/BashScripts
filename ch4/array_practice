@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+
+array=(foo bar baz)
+echo "${array[0]}"
+echo "${array[1]}"
+echo "${array[2]}"
+echo "${array[3]}"
+
+echo "${array[4]}"
+
+idx=2
+echo "idx: ${array[$idx]}"
+
+echo "*: ${array[*]}"
+echo "@: ${array[@]}"
+
+for item in "${array[*]}"; do
+	echo "item is: $item"
+done #for when we want to stringify
+
+for item in "${array[@]}"; do
+	echo "item is: $item"
+done #array uses each item independently, how it is supposed to be
+
+#when you copy an array, put parenthesis (make new array) and quotes around it (put items from 1st into 2nd)
+#you can push to a new array
+# length: "${#array[@]}' # gives length
+
+
