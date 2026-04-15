@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 
 declare -A arr
-echo $?
+echo $? #determines if we can create a associate array or not (I updated bash so we can)
 
