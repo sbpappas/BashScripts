@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+
+
+thing=`whoami`
+
+whoami
+
+echo "hello $thing"
+#echo `echo \`echo\\\`whoami\\\`\``
+
+echo "$(whoami)" 
+
+my-func(){
+	echo hi
+}
+
+thing=$(my-func)
+echo "Thing is $thing"
+echo thing is $thing
+
+
