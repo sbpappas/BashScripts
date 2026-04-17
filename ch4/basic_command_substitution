@@ -5,17 +5,17 @@ thing=`whoami`
 
 whoami
 
-echo "hello $thing"
-#echo `echo \`echo\\\`whoami\\\`\``
+#echo "hello $thing"
+#echo "$(whoami)" 
 
-echo "$(whoami)" 
-
+i=5
 my-func(){
+	i=6
 	echo hi
 }
 
-thing=$(my-func)
+thing=${ my-func; } #this makes my func not run in subshell, modifies global variables
 echo "Thing is $thing"
 echo thing is $thing
-
+echo "i is $i"
 
