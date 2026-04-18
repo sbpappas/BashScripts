@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+thing=$(( 2 + 2))
+echo "thing is $thing"
+
+a=3
+b=5
+echo $(( a+b))
