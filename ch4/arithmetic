@@ -5,4 +5,20 @@ echo "thing is $thing"
 
 a=3
 b=5
-echo $(( a+b))
+i=0
+((i++))
+echo $(( a+b+i))
+
+j=5
+((j <<=2))
+echo "j is $j"
+
+((max = a > j ? a : j))
+echo "max is $max"
+
+#when answer to math statement is 0, it is a failure to bash
+c=08
+echo "$c"
+echo $((10#$c)) #set the base (default is 8)
+
+
