@@ -1,0 +1,9 @@
+cut
+tr - translates a 
+
+cat /etc/passwd | cut -d : -f 1,7
+- this can see all your passwords?
+
+grep
+awk
+sed : stream editor sed 's/dave/samuel/'
