@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+echo hello
+
+if true; then
+	echo goodbye
+fii
+
+#bash -n syntax_error does syntax checking without running code!
+# echo $?

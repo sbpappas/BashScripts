@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+set -x # turn on debug
+
+first_name='john'
+last_name='janky'
+
+set +x #turn off debug
+
+full_name="$first_name $last_name"
+
+if [[ $first_name == 'john' ]]; then
+	echo "oh hey it's dave"
+fi
+
+echo "Hello $full_name!"

@@ -16,11 +16,14 @@ wc : word count
 	- -c for characters (bytes)
 	- wc -l is lines
 
-sed : stream editor sed 's/dave/samuel/'
+sed : stream editor which can parse and manipulate text, replacing as needed
 
 find: find command on your file system
 	- find names in directory that start with a: find . -name 'a*'
 	- don't start with a: find . ! -name 'a*'
 find . -path './.git' -prune -o -type f -print
 ./file.txt
+
+	- find /usr/share -type f -name '*.txt' -exec echo hi i found a file {}  ';'
+
 
