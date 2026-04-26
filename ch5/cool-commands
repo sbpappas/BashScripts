@@ -5,5 +5,22 @@ cat /etc/passwd | cut -d : -f 1,7
 - this can see all your passwords?
 
 grep
-awk
+awk : so powerful, 
+	- is its own language
+you can pipe data into  | sort | uniq -c 
+	- sort will sort it
+	- sort | uniq will give unique data
+	- sort | uniq -c for amounts
+wc : word count 
+	- -w for words
+	- -c for characters (bytes)
+	- wc -l is lines
+
 sed : stream editor sed 's/dave/samuel/'
+
+find: find command on your file system
+	- find names in directory that start with a: find . -name 'a*'
+	- don't start with a: find . ! -name 'a*'
+find . -path './.git' -prune -o -type f -print
+./file.txt
+
