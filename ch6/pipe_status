@@ -1,0 +1,10 @@
+
+$? refers to the last thing in a pipe
+	- if the last pipe was successful, $? is 0
+echo "${PIPESTATUS[*]}"
+
+(exit 5) | (exit 7) | (exit 100) | (exit 0)
+bash-5.3$ echo "${PIPESTATUS[*]}"
+5 7 100 0
+
+
