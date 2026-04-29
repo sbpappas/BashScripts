@@ -1,3 +1,10 @@
 #!/usr/bin/env bash
 
+source ./lib/greetings
+# can also use:  . ./lib/greetings
+# . ./lib/greetingz || exit 1
+
+
+greet samuel
+goodbye jill
 

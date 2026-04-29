@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+greet() {
+	echo "hello $1"
+}
+
+goodbye() {
+	echo "bye $1"
+}
+
+if ! (return 3>/dev/null); then
+	#we are calling this file directly
+	greet dave
+	goodbye samuel
+fi
+
