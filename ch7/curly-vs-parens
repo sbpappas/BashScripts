@@ -4,6 +4,6 @@
 
 name='samuel'
 echo "before greeting: $name"
-greet travis
+(greet travis)
 echo "after greeting dave, name is : $name"
 
