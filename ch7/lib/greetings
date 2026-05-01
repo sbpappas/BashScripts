@@ -1,11 +1,13 @@
 #!/usr/bin/env bash
 
-greet() {
-	echo "hello $1"
-}
+greet() ( # parentheses will run in its own subshell
+	name=$1
+	echo "hello $name"
+)
 
 goodbye() {
-	echo "bye $1"
+	name=$1
+	echo "bye $name"
 }
 
 if ! (return 3>/dev/null); then
