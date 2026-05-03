@@ -1,7 +1,12 @@
 #!/usr/bin/env bash
 
-var=$(uname)
-code=$?
+func1() {
+	echo "samuel"
+	return 23 #this is the return code
+}
+
+var=$(func1)
+code=$? #must be right after the command we want to analyze
 
 echo "output=$var, code=$code"
 
