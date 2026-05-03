@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+name=${1?"Name is required"} #name required
+#name=${1:-$USER} # :- sets a default value if it is empty string on nothing
+
+
+echo "hello $name!"
+ 
+echo 'done'
+
+

@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+#get shell
+cat /etc/passwd | grep sql | cut -d : -f 7

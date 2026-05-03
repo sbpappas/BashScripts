@@ -1,11 +1,14 @@
 #!/usr/bin/env bash
 
 func1() {
-	echo "samuel"
+	echo "this goes to stdout" >&1
+	echo "this goes to stderr" >&2 #this prints immediately
 	return 23 #this is the return code
 }
 
-var=$(func1)
+#var=$(func1)
+#var=$(func1 1>&/dev/null)
+var=$(func1 2>&1) #redirects stderr to stdout
 code=$? #must be right after the command we want to analyze
 
 echo "output=$var, code=$code"
