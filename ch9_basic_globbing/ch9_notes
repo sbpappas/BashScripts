@@ -27,4 +27,7 @@ ls files/@(foo|bar).*
 ls files/@(foo|ba?).*
 
 shopt nullglob
-dotglop (hidden)
+dotglob (hidden)
+findglob (recursively finds all files)
+
+
