@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+filename='my_file'
+arr=( "$filename."{txt,jpg,mov} )
+for item in "${arr[@]}"; do
+	echo "$item"
+done
+
+#multiple curly brace expansions
+arr2=(/etc/{foo,bar}/{1,2,3}.txt) #prints all possible combos
+for item in "${arr2[@]}"; do
+	echo "$item"
+done
+
+#create a bunch of files at once:
+# touch {foo,bar,baz}.{jpg,txt}
+
