@@ -1,0 +1,8 @@
+
+printf '%10s %10s\n' hello world 
+     hello      world
+#this right justifies this up to 10 spaces for both arguments
+
+# '%s' makes it treat an argument as a string
+# 
+
