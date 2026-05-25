@@ -1,0 +1,11 @@
+help mapfile (also known as readarray)
+ - read files into arrays
+ - whenever there is a new line, push it in the array
+
+mapfile array_name < data.txt
+
+make sure to trim the new line
+ - can limit to only read first x lines
+ the '-c 1' evaluates after each 1 line
+
+
