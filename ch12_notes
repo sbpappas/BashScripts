@@ -1,0 +1,15 @@
+test is built into bash
+[ is built in and is also built in
+ - you can run the ./bin/[ program 
+ - need a closing though
+ - usually stay away from single square brackets
+can get away with some things in [[ that you cannot in [
+- dont have to quote expansions in [[
+[[10 > 9]] is false - WEIRD
+[[10 -gt 0]] is what we expect
+in bash, use ((10>9)) which is what we expect
+
+
+
+for test -f "foo.jpg" exists
+
