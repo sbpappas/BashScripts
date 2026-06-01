@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+#trap -l lists all the signals your OS has
+cleanup() {
+	echo cleanup function running
+}
+trap cleanup exit
+echo script starting
+echo "..."
+echo "script done"
+# you can also choose an exit code here if you'd like
+
+

@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+#trap -l lists all the signals your OS has
+my-func() {
+	echo function running
+}
+trap my-func SIGINT
+
+while true; do
+	sleep 1
+	echo running
+done
