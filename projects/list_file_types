@@ -2,10 +2,17 @@
 
 path='/Users/Samuel/Desktop'
 
-for entry in $path/*; do 
-	if [ -d "$entry" ]; then
-		echo "$entry - directory"
-	else
-		echo "$entry - file"
-	fi
+for entry in "$path"/*; do
+        [ -e "$entry" ] || continue
+
+        name=$(basename "$entry")
+	size=$(stat -f%z "$entry")
+
+        if [ -d "$entry" ]; then # get file type
+                type="directory"
+        else
+                type=$(file -b "$entry") #brief description
+        fi
+
+        echo "[$type] | Size: $size bytes | Name: $name"
 done
