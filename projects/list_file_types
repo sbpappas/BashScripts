@@ -1,9 +1,10 @@
 #!/usr/bin/env bash
 
 path='/Users/Samuel/Desktop'
-
+echo "Files in: $path"
 for entry in "$path"/*; do
-        [ -e "$entry" ] || continue
+	echo "Processing: $entry"
+        # [ -e "$entry" ] || continue
 
         name=$(basename "$entry")
 	size=$(stat -f%z "$entry")
@@ -16,3 +17,5 @@ for entry in "$path"/*; do
 
         echo "[$type] | Size: $size bytes | Name: $name"
 done
+
+echo "completed"
