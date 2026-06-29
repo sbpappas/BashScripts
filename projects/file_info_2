@@ -1,0 +1,73 @@
+#!/usr/bin/env bash
+
+path="${1:-$HOME/Desktop}"
+sort_by_size=false
+
+# Check for size sorting flag
+if [[ "$1" == "-s" ]]; then
+    sort_by_size=true
+    path="${2:-$HOME/Desktop}"
+fi
+
+TYPE_WIDTH=25
+SIZE_WIDTH=10
+NAME_WIDTH=40
+
+truncate() {
+    local text="$1"
+    local width="$2"
+
+    if (( ${#text} > width )); then
+        echo "${text:0:$((width-3))}..."
+    else
+        echo "$text"
+    fi
+}
+
+echo "Files in: $path"
+echo
+
+printf "%-${TYPE_WIDTH}s %- ${SIZE_WIDTH}s %-${NAME_WIDTH}s\n" "TYPE" "SIZE" "NAME"
+printf "%-${TYPE_WIDTH}s %- ${SIZE_WIDTH}s %-${NAME_WIDTH}s\n" \
+    "$(printf '%*s' "$TYPE_WIDTH" '' | tr ' ' '-')" \
+    "$(printf '%*s' "$SIZE_WIDTH" '' | tr ' ' '-')" \
+    "$(printf '%*s' "$NAME_WIDTH" '' | tr ' ' '-')"
+
+output=()
+
+for entry in "$path"/*; do
+    [ -e "$entry" ] || continue
+
+    name=$(basename "$entry")
+    size=$(stat -f %z "$entry")
+
+    if [ -d "$entry" ]; then
+        type="directory"
+    elif [ -L "$entry" ]; then
+        type="symlink"
+    else
+        type=$(file -b "$entry")
+    fi
+
+    short_name=$(truncate "$name" "$NAME_WIDTH")
+    short_type=$(truncate "$type" "$TYPE_WIDTH")
+
+    # Store: numeric_size|formatted_line
+    line=$(printf "%-${TYPE_WIDTH}s %${SIZE_WIDTH}d %-${NAME_WIDTH}s" \
+        "$short_type" "$size" "$short_name")
+
+    output+=("${size}|${line}")
+done
+
+if $sort_by_size; then
+    printf '%s\n' "${output[@]}" \
+        | sort -n -t'|' -k1 \
+        | cut -d'|' -f2-
+else
+    for line in "${output[@]}"; do
+        echo "${line#*|}"
+    done
+fi
+
+echo
+echo "Completed."
